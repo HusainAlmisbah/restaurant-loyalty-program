@@ -12,6 +12,7 @@ const passUserToView = require("./middleware/pass-user-to-view.js");
 const methodOverride = require('method-override')
 const menuItem = require('./controllers/menu.routes.js')
 
+
 app.use(express.static('public')) // my app will serve all static files from public folder
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev'))
@@ -66,7 +67,7 @@ connectToDB() // connect to database
 // Routes go here
 app.use('/auth',authController)
 app.use('/',indexController)
-app.usw('/',menuItem)
+app.use('/menu',menuItem)
 
 
 // PROTECTED ROUTES:
