@@ -12,7 +12,10 @@ const menuSchema = new mongoose.Schema({
   Points: {
     type: Number,
     // required: true,
-  }
+  },
+  catagory: {
+    type: String
+  }  
 });
 
 const menuItem = mongoose.model("User", menuSchema);
