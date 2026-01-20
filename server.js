@@ -11,6 +11,7 @@ const isSignedIn = require("./middleware/is-signed-in.js");
 const passUserToView = require("./middleware/pass-user-to-view.js");
 const methodOverride = require('method-override')
 const menuItem = require('./controllers/menu.routes.js')
+const profilePage = require('./controllers/profile.routes.js')
 
 
 app.use(express.static('public')) // my app will serve all static files from public folder
@@ -68,6 +69,7 @@ connectToDB() // connect to database
 app.use('/auth',authController)
 app.use('/',indexController)
 app.use('/menu',menuItem)
+app.use('/profile', profilePage)
 
 
 // PROTECTED ROUTES:
