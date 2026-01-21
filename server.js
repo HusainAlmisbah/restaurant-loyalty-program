@@ -13,6 +13,7 @@ const methodOverride = require('method-override')
 const menuItem = require('./controllers/menu.routes.js')
 const profilePage = require('./controllers/profile.routes.js')
 const createItem = require('./controllers/create.item.js')
+const adminMenu = require('./controllers/admin.menu.js')
 
 
 app.use(express.static('public')) // my app will serve all static files from public folder
@@ -71,7 +72,8 @@ app.use('/auth',authController)
 app.use('/',indexController)
 app.use('/menu',menuItem)
 app.use('/profile', profilePage)
-app.use('/item', createItem )
+app.use('/item', createItem)
+app.use('/adminMenu', adminMenu)
 
 
 // PROTECTED ROUTES:

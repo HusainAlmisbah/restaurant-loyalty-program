@@ -6,6 +6,31 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('navbar') %>
+
     <h1>Add Item</h1>
+
+    <form action="/item" method="post">
+    <label for="">Meal Name</label>
+    <input name="mealName" type="text">
+
+    <label for="">Price</label>
+    <input name="Price" type="number">
+
+    <label for="">Category</label>
+    <select name="Category" id="">
+
+
+        <% points.forEach(point => { %>
+            <option value="<%= point %>"><%= point %></option>
+        <% }) %>
+    </select>
+
+    <button>Submit</button>
+
+
+
+    </form>
+    
 </body>
 </html>
