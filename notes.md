@@ -22,7 +22,6 @@ Jalapeno Bites — BHD 2.100
 Chicken Popcorn — BHD 2.100
 
 Cold Meza & Salads
-dhdiwhdoh
 Hummus — BHD 1.500
 Moutabal — BHD 1.500
 Mutabal With Pomegranate — BHD 1.800
