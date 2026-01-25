@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 <body>
+     <%- include('navbar') %>
+<!-- dropdown for deleting menu item -->
     <h1>Admin Menu</h1>
+
+        <label for="Soups">Soups</label>
+        <select name="Soups" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <option value="<%= oneItem._id %>"> <%= oneItem.mealName %> </option>
+            <% }) %>
+        </select>
+        
+
+
+        <button onclick="handleUpdate()">Update</button>
+        <button onclick="handleDelete()">Delete</button>
+        <button>Add Item</button>
+
+    <script>
+        const handleDelete = () => {
+            const select = document.querySelector('select[name="Soups"]')
+            const itemId = select.value
+
+            fetch(`/adminMenu/delete/${itemId}`, {
+                method: 'POST'
+            })
+            .then(()=> {
+                window.location.reload()
+            })
+        }
+
+        const handleUpdate = () => {
+            const select = document.querySelector('select[name="Soups"]')
+            const itemId = select.value
+
+            window.location.href = `/adminMenu/update/${itemId}`
+        }
+    </script>
 </body>
 </html>

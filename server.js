@@ -77,7 +77,7 @@ app.use('/adminMenu', adminMenu)
 
 
 // PROTECTED ROUTES:
-app.use(isSignedIn)
+// app.use(isSignedIn)
 // Everything under the user NEEDS to be logged in to se
 
 

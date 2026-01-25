@@ -8,7 +8,7 @@
 <body>
     <%- include('navbar') %>
 
-    <h1>Add Item</h1>
+    <h1>Item Form</h1>
 
     <form action="/item" method="post">
     <label for="">Meal Name</label>
@@ -19,14 +19,13 @@
 
     <label for="">Category</label>
     <select name="Category" id="">
-
-
         <% points.forEach(point => { %>
             <option value="<%= point %>"><%= point %></option>
         <% }) %>
     </select>
 
-    <button>Submit</button>
+    <button>Add Item</button>
+    <button action="/adminMenu">Admin Menu</button>
 
 
 

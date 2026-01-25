@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Updated list</h1>
+    <form action="/update-item" method="post">
+    <label for="">Meal Name</label>
+    <input name="mealName" type="text" value="<%= item.mealName %>">
+    <label for="">Price</label>
+    <input name="Price" type="number" value="<%= item.Price %>">
+    <label for="">Category</label>
+    <select name="Category" id="">
+        <% points.forEach((point) => { %>
+            <option value="<%= point %>" <%= item.Category === point ? 'selected' : '' %>><%= point %></option>
+        <% }) %>
+    </select>
+
+    <button onclick="newUpdate()">Update</button>
+
+    </form>
+
+    <script>
+        const newUpdate = () => {
+            const select = document.querySelector('select[name="Category"]')
+            const category = select.value
+            alert('Item Updated')
+        }
+    </script>
+</body>
+</html>
