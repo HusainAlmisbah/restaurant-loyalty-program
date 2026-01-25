@@ -6,8 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+      <%- include('navbar') %>
+
     <h1>Updated list</h1>
-    <form action="/update-item" method="post">
+    <form action="/adminMenu/update-item/<%= item._id %>" method="post">
     <label for="">Meal Name</label>
     <input name="mealName" type="text" value="<%= item.mealName %>">
     <label for="">Price</label>
