@@ -141,7 +141,7 @@
     
     <br>
 
-    <label for="">Shawarma</label>
+    <!-- <label for="">Shawarma</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Chicken Shawarma Sandwich">Chicken Shawarma Sandwich — BHD 1.200</option>
@@ -150,6 +150,15 @@
         <option value="Chicken Shawarma Plate">Chicken Shawarma Plate — BHD 3.200</option>
         <option value="Meat Shawarma Plate">Meat Shawarma Plate — BHD 3.400</option>
         <option value="Mix Shawarma Plate">Mix Shawarma Plate — BHD 3.400</option>
+    </select> -->
+    <label for="shawarma">Shawarma</label>
+    <select name="shawarma" id="shawarma">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "shawarma").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -167,12 +176,21 @@
    
     <br>
 
-    <label for="">By KG</label>
+    <!-- <label for="">By KG</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Grilled Shrimps By KG">Grilled Shrimps By KG — BHD 15.000</option>
         <option value="Mixed Seafood By KG">Mixed Seafood By KG — BHD 15.000</option>
         <option value="Fish By KG">Fish By KG — BHD 8.000</option>
+    </select> -->
+    <label for="byKG">By KG</label>
+    <select name="byKG" id="byKG">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "byKG").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -190,7 +208,7 @@
    
     <br>
 
-    <label for="">Fried & Grilled Fish</label>
+    <!-- <label for="">Fried & Grilled Fish</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Fish With Rice">Fish With Rice — BHD 5.000</option>
@@ -202,6 +220,15 @@
         <option value="Grilled Shrimps">Grilled Shrimps — BHD 4.900</option>
         <option value="Fried Calamari">Fried Calamari — BHD 4.600</option>
         <option value="Grilled Calamari">Grilled Calamari — BHD 4.600</option>
+    </select> -->
+    <label for="friedGrilledFish">Fried & Grilled Fish</label>
+    <select name="friedGrilledFish" id="friedGrilledFish">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "friedGrilledFish").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -219,7 +246,7 @@
     
     <br>
 
-    <label for="">Stews & Curries</label>
+    <!-- <label for="">Stews & Curries</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Okra Stew With Lamb">Okra Stew With Lamb — BHD 2.850</option>
@@ -229,6 +256,15 @@
         <option value="Prawns Masala">Prawns Masala — BHD 3.850</option>
         <option value="Prawns Stew">Prawns Stew — BHD 3.500</option>
         <option value="Butter Chicken">Butter Chicken — BHD 3.600</option>
+    </select> -->
+    <label for="stewsCurries">Stews & Curries</label>
+    <select name="stewsCurries" id="stewsCurries">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "stewsCurries").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -246,7 +282,7 @@
     
     <br>
 
-    <label for="">Grills</label>
+    <!-- <label for="">Grills</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Kebab">Kebab — BHD 3.200</option>
@@ -269,6 +305,15 @@
         <option value="Mix Grill (10 Persons)">Mix Grill (10 Persons) — BHD 29.000</option>
         <option value="Mix Grill (12 Persons)">Mix Grill (12 Persons) — BHD 34.000</option>
         <option value="Mix Grill (14 Persons)">Mix Grill (14 Persons) — BHD 39.000</option>
+    </select> -->
+    <label for="grills">Grills</label>
+    <select name="grills" id="grills">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "grills").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -286,7 +331,7 @@
 
     <br>
 
-    <label for="">Pasta</label>
+    <!-- <label for="">Pasta</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Pasta Alfredo">Pasta Alfredo — BHD 3.200</option>
@@ -295,6 +340,15 @@
         <option value="Pasta Bolognese">Pasta Bolognese — BHD 3.100</option>
         <option value="Spaghetti Bolognese">Spaghetti Bolognese — BHD 3.100</option>
         <option value="Beef Lasagna">Beef Lasagna — BHD 3.400</option>
+    </select> -->
+    <label for="pasta">Pasta</label>
+    <select name="pasta" id="pasta">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "pasta").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -312,7 +366,7 @@
 
     <br>
 
-    <label for="">Chinese Dishes</label>
+    <!-- <label for="">Chinese Dishes</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Sweet Corn Chicken">Sweet Corn Chicken — BHD 3.300</option>
@@ -322,6 +376,15 @@
         <option value="Chicken Manchurian">Chicken Manchurian — BHD 3.300</option>
         <option value="Prawns Manchurian">Prawns Manchurian — BHD 3.600</option>
         <option value="Mixed Fried Rice">Mixed Fried Rice — BHD 3.300</option>
+    </select> -->
+    <label for="chineseDishes">Chinese Dishes</label>
+    <select name="chineseDishes" id="chineseDishes">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "chineseDishes").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -339,7 +402,7 @@
 
     <br>
 
-    <label for="">Sizzling</label>
+    <!-- <label for="">Sizzling</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Beef Steak Sizzling">Beef Steak Sizzling — BHD 5.500</option>
@@ -349,6 +412,15 @@
         <option value="Fish Sizzling">Fish Sizzling — BHD 5.300</option>
         <option value="Mix Sizzling">Mix Sizzling — BHD 4.300</option>
         <option value="Vegetable Sizzling">Vegetable Sizzling — BHD 4.000</option>
+    </select> -->
+    <label for="sizzling">Sizzling</label>
+    <select name="sizzling" id="sizzling">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "sizzling").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -366,7 +438,7 @@
 
     <br>
 
-    <label for="">International Dishes</label>
+    <!-- <label for="">International Dishes</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Moussaka">Moussaka — BHD 2.900</option>
@@ -378,6 +450,15 @@
         <option value="Mixed Stuffed">Mixed Stuffed — BHD 2.900</option>
         <option value="Chicken Biryani">Chicken Biryani — BHD 3.200</option>
         <option value="Lamb Biryani">Lamb Biryani — BHD 3.600</option>
+    </select> -->
+    <label for="internationalDishes">International Dishes</label>
+    <select name="internationalDishes" id="internationalDishes">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "internationalDishes").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -395,7 +476,7 @@
         
     <br>
 
-    <label for="">Sandwiches</label>
+    <!-- <label for="">Sandwiches</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Club Sandwich">Club Sandwich — BHD 2.600</option>
@@ -405,6 +486,15 @@
         <option value="Crispy Chicken Sandwich">Crispy Chicken Sandwich — BHD 2.600</option>
         <option value="Steak Sandwich">Steak Sandwich — BHD 3.200</option>
         <option value="Shish Tawook Sandwich">Shish Tawook Sandwich — BHD 1.675</option>
+    </select> -->
+    <label for="sandwiches">Sandwiches</label>
+    <select name="sandwiches" id="sandwiches">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "sandwiches").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -422,7 +512,7 @@
         
     <br>
 
-    <label for="">Desserts</label>
+    <!-- <label for="">Desserts</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Strawberry Cheese Cake">Strawberry Cheese Cake — BHD 2.000</option>
@@ -436,6 +526,15 @@
         <option value="Kunafa">Kunafa — BHD 1.800</option>
         <option value="Ice Cream">Ice Cream — BHD 1.500</option>
         <option value="Fruit Salad">Fruit Salad — BHD 1.800</option>
+    </select> -->
+    <label for="desserts">Desserts</label>
+    <select name="desserts" id="desserts">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "desserts").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -453,7 +552,7 @@
        
     <br>
 
-    <label for="">Cold Beverages</label>
+    <!-- <label for="">Cold Beverages</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Water">Water — BHD 0.200</option>
@@ -483,6 +582,15 @@
         <option value="Passion Fruit Mojito">Passion Fruit Mojito — BHD 1.400</option>
         <option value="Mango Mojito">Mango Mojito — BHD 1.400</option>
         <option value="Lemon Mint">Lemon Mint — BHD 1.000</option>
+    </select> -->
+    <label for="coldBeverages">Cold Beverages</label>
+    <select name="coldBeverages" id="coldBeverages">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "coldBeverages").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -500,7 +608,7 @@
 
     <br>
 
-    <label for="">Fresh Juices</label>
+    <!-- <label for="">Fresh Juices</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Orange Juice">Orange Juice — BHD 1.000</option>
@@ -519,6 +627,15 @@
         <option value="Carrot Juice">Carrot Juice — BHD 1.000</option>
         <option value="Mix Berries Juice">Mix Berries Juice — BHD 1.600</option>
         <option value="Mix Fruits Juice">Mix Fruits Juice — BHD 1.400</option>
+    </select> -->
+    <label for="freshJuices">Fresh Juices</label>
+    <select name="freshJuices" id="freshJuices">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "freshJuices").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
