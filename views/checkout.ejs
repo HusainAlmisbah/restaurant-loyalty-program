@@ -6,6 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+
+    <%- include('navbar') %>
     <h1>Checkout</h1>
+    <form action="/checkout" method="post">
+        
+
+
+
+        <label for="">Name</label>
+        <input name="name" type="text" placeholder="Full Name">
+
+        <label for="">Address</label>
+        <input name="address" type="text" placeholder="Delivery Address">
+
+        <label for="">Phone Number</label>
+        <input name="phoneNumber" type="text" placeholder="Phone Number">
+
+        <button>Confirm Order</button>
+    </form>
 </body>
 </html>

@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
+
 </head>
 <body>
     <%- include('navbar') %>
 
     <h1>Menu</h1>
-    <label for="">Soups</label>
-    <select name="" id="">
+
+    <form action="/checkout" method="post">
+    <!-- <label for="">Soups</label>
+    <select name="soups" id="">
         <option value="">Choose</option>
         <option value="Lentil Soup">Lentil Soup — BHD 1.500</option>
         <option value="Iranian Chicken Soup">Iranian Chicken Soup — BHD 1.750</option>
@@ -19,6 +23,15 @@
         <option value="Chicken Corn Soup">Chicken Corn Soup — BHD 1.750</option>
         <option value="Hot & Sour Soup">Hot & Sour Soup — BHD 1.600</option>
         <option value="Hot & Sour Soup (Prawns)">Hot & Sour Soup (Prawns) — BHD 1.750</option>
+    </select> -->
+    <label for="soups">Soups</label>
+    <select name="soups" id="soups">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "soups").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+             </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -34,8 +47,9 @@
         <option value="10">10</option>
     </select>
 
+    <br>
 
-    <label for="">Hot Meza</label>
+    <!-- <label for="">Hot Meza</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="French Fries">French Fries — BHD 0.800</option>
@@ -50,6 +64,15 @@
         <option value="Mozzarella Stick">Mozzarella Stick — BHD 2.100</option>
         <option value="Jalapeno Bites">Jalapeno Bites — BHD 2.100</option>
         <option value="Chicken Popcorn">Chicken Popcorn — BHD 2.100</option>
+    </select> -->
+    <label for="hotMeza">Hot Meza</label>
+    <select name="hotMeza" id="hotMeza">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "hotMeza").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -65,8 +88,9 @@
         <option value="10">10</option>
     </select>
 
+    <br>
 
-    <label for="">Cold Meza & Salads</label>
+    <!-- <label for="">Cold Meza & Salads</label>
     <select name="" id="">
         <option value="">Choose</option>
         <option value="Hummus">Hummus — BHD 1.500</option>
@@ -91,6 +115,15 @@
         <option value="Eggplant Fatta">Eggplant Fatta — BHD 2.500</option>
         <option value="Chili Sauce">Chili Sauce — BHD 0.250</option>
         <option value="Garlic">Garlic — BHD 0.250</option>
+    </select> -->
+    <label for="coldMezaSalads">Cold Meza & Salads</label>
+    <select name="coldMezaSalads" id="coldMezaSalads">
+        <option value="">Choose</option>
+        <% menu.filter(i => i.category === "coldMezaSalads").forEach(i => { %>
+            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            </option>
+        <% }) %>
     </select>
     <label for="">Quantiy</label>
     <select name="" id="">
@@ -105,7 +138,8 @@
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
-
+    
+    <br>
 
     <label for="">Shawarma</label>
     <select name="" id="">
@@ -130,7 +164,8 @@
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
-
+   
+    <br>
 
     <label for="">By KG</label>
     <select name="" id="">
@@ -152,7 +187,8 @@
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
-
+   
+    <br>
 
     <label for="">Fried & Grilled Fish</label>
     <select name="" id="">
@@ -180,6 +216,8 @@
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
+    
+    <br>
 
     <label for="">Stews & Curries</label>
     <select name="" id="">
@@ -205,286 +243,310 @@
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
+    
+    <br>
 
     <label for="">Grills</label>
-<select name="" id="">
-    <option value="">Choose</option>
-    <option value="Kebab">Kebab — BHD 3.200</option>
-    <option value="Chicken Tikka">Chicken Tikka — BHD 3.200</option>
-    <option value="Beef Tikka">Beef Tikka — BHD 3.200</option>
-    <option value="Bahraini Beef Tikka">Bahraini Beef Tikka — BHD 3.500</option>
-    <option value="Shish Tawook">Shish Tawook — BHD 3.200</option>
-    <option value="Chops">Chops — BHD 4.600</option>
-    <option value="Grilled Fish">Grilled Fish — BHD 4.600</option>
-    <option value="Grilled Shrimps">Grilled Shrimps — BHD 4.900</option>
-    <option value="Mix Grills">Mix Grills — BHD 4.600</option>
-    <option value="Charcoal Chicken">Charcoal Chicken — BHD 2.650</option>
-    <option value="Spicy Charcoal Chicken">Spicy Charcoal Chicken — BHD 2.750</option>
-    <option value="Charcoal Chicken With Rice">Charcoal Chicken With Rice — BHD 3.850</option>
-    <option value="Spicy Charcoal Chicken With Rice">Spicy Charcoal Chicken With Rice — BHD 3.950</option>
-    <option value="Chicken Legs">Chicken Legs — BHD 3.400</option>
-    <option value="Mix Grill (4 Persons)">Mix Grill (4 Persons) — BHD 12.500</option>
-    <option value="Mix Grill (6 Persons)">Mix Grill (6 Persons) — BHD 18.500</option>
-    <option value="Mix Grill (8 Persons)">Mix Grill (8 Persons) — BHD 24.000</option>
-    <option value="Mix Grill (10 Persons)">Mix Grill (10 Persons) — BHD 29.000</option>
-    <option value="Mix Grill (12 Persons)">Mix Grill (12 Persons) — BHD 34.000</option>
-    <option value="Mix Grill (14 Persons)">Mix Grill (14 Persons) — BHD 39.000</option>
-</select>
-<label for="">Quantiy</label>
-<select name="" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-</select>
+    <select name="" id="">
+        <option value="">Choose</option>
+        <option value="Kebab">Kebab — BHD 3.200</option>
+        <option value="Chicken Tikka">Chicken Tikka — BHD 3.200</option>
+        <option value="Beef Tikka">Beef Tikka — BHD 3.200</option>
+        <option value="Bahraini Beef Tikka">Bahraini Beef Tikka — BHD 3.500</option>
+        <option value="Shish Tawook">Shish Tawook — BHD 3.200</option>
+        <option value="Chops">Chops — BHD 4.600</option>
+        <option value="Grilled Fish">Grilled Fish — BHD 4.600</option>
+        <option value="Grilled Shrimps">Grilled Shrimps — BHD 4.900</option>
+        <option value="Mix Grills">Mix Grills — BHD 4.600</option>
+        <option value="Charcoal Chicken">Charcoal Chicken — BHD 2.650</option>
+        <option value="Spicy Charcoal Chicken">Spicy Charcoal Chicken — BHD 2.750</option>
+        <option value="Charcoal Chicken With Rice">Charcoal Chicken With Rice — BHD 3.850</option>
+        <option value="Spicy Charcoal Chicken With Rice">Spicy Charcoal Chicken With Rice — BHD 3.950</option>
+        <option value="Chicken Legs">Chicken Legs — BHD 3.400</option>
+        <option value="Mix Grill (4 Persons)">Mix Grill (4 Persons) — BHD 12.500</option>
+        <option value="Mix Grill (6 Persons)">Mix Grill (6 Persons) — BHD 18.500</option>
+        <option value="Mix Grill (8 Persons)">Mix Grill (8 Persons) — BHD 24.000</option>
+        <option value="Mix Grill (10 Persons)">Mix Grill (10 Persons) — BHD 29.000</option>
+        <option value="Mix Grill (12 Persons)">Mix Grill (12 Persons) — BHD 34.000</option>
+        <option value="Mix Grill (14 Persons)">Mix Grill (14 Persons) — BHD 39.000</option>
+    </select>
+    <label for="">Quantiy</label>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <br>
+
+    <label for="">Pasta</label>
+    <select name="" id="">
+        <option value="">Choose</option>
+        <option value="Pasta Alfredo">Pasta Alfredo — BHD 3.200</option>
+        <option value="Pasta Arrabiata">Pasta Arrabiata — BHD 3.200</option>
+        <option value="Pasta Pesto">Pasta Pesto — BHD 3.200</option>
+        <option value="Pasta Bolognese">Pasta Bolognese — BHD 3.100</option>
+        <option value="Spaghetti Bolognese">Spaghetti Bolognese — BHD 3.100</option>
+        <option value="Beef Lasagna">Beef Lasagna — BHD 3.400</option>
+    </select>
+    <label for="">Quantiy</label>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <br>
+
+    <label for="">Chinese Dishes</label>
+    <select name="" id="">
+        <option value="">Choose</option>
+        <option value="Sweet Corn Chicken">Sweet Corn Chicken — BHD 3.300</option>
+        <option value="Sweet Corn Prawns">Sweet Corn Prawns — BHD 3.600</option>
+        <option value="Chilli Chicken">Chilli Chicken — BHD 3.300</option>
+        <option value="Chilli Prawns">Chilli Prawns — BHD 3.600</option>
+        <option value="Chicken Manchurian">Chicken Manchurian — BHD 3.300</option>
+        <option value="Prawns Manchurian">Prawns Manchurian — BHD 3.600</option>
+        <option value="Mixed Fried Rice">Mixed Fried Rice — BHD 3.300</option>
+    </select>
+    <label for="">Quantiy</label>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <br>
+
+    <label for="">Sizzling</label>
+    <select name="" id="">
+        <option value="">Choose</option>
+        <option value="Beef Steak Sizzling">Beef Steak Sizzling — BHD 5.500</option>
+        <option value="Chicken Fillet Sizzling">Chicken Fillet Sizzling — BHD 5.200</option>
+        <option value="Chicken Wings Sizzling">Chicken Wings Sizzling — BHD 4.600</option>
+        <option value="Prawns Sizzling">Prawns Sizzling — BHD 5.300</option>
+        <option value="Fish Sizzling">Fish Sizzling — BHD 5.300</option>
+        <option value="Mix Sizzling">Mix Sizzling — BHD 4.300</option>
+        <option value="Vegetable Sizzling">Vegetable Sizzling — BHD 4.000</option>
+    </select>
+    <label for="">Quantiy</label>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <br>
+
+    <label for="">International Dishes</label>
+    <select name="" id="">
+        <option value="">Choose</option>
+        <option value="Moussaka">Moussaka — BHD 2.900</option>
+        <option value="Stuffed Zucchini">Stuffed Zucchini — BHD 2.900</option>
+        <option value="Stuffed Eggplant">Stuffed Eggplant — BHD 2.900</option>
+        <option value="Stuffed Green Pepper">Stuffed Green Pepper — BHD 2.900</option>
+        <option value="Stuffed Cabbage">Stuffed Cabbage — BHD 2.900</option>
+        <option value="Stuffed Vine Leaves">Stuffed Vine Leaves — BHD 2.900</option>
+        <option value="Mixed Stuffed">Mixed Stuffed — BHD 2.900</option>
+        <option value="Chicken Biryani">Chicken Biryani — BHD 3.200</option>
+        <option value="Lamb Biryani">Lamb Biryani — BHD 3.600</option>
+    </select>
+    <label for="">Quantiy</label>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+        
+    <br>
+
+    <label for="">Sandwiches</label>
+    <select name="" id="">
+        <option value="">Choose</option>
+        <option value="Club Sandwich">Club Sandwich — BHD 2.600</option>
+        <option value="Burger Sandwich">Burger Sandwich — BHD 2.600</option>
+        <option value="Chicken Burger Sandwich">Chicken Burger Sandwich — BHD 2.600</option>
+        <option value="Beef Burger Sandwich">Beef Burger Sandwich — BHD 2.600</option>
+        <option value="Crispy Chicken Sandwich">Crispy Chicken Sandwich — BHD 2.600</option>
+        <option value="Steak Sandwich">Steak Sandwich — BHD 3.200</option>
+        <option value="Shish Tawook Sandwich">Shish Tawook Sandwich — BHD 1.675</option>
+    </select>
+    <label for="">Quantiy</label>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+        
+    <br>
+
+    <label for="">Desserts</label>
+    <select name="" id="">
+        <option value="">Choose</option>
+        <option value="Strawberry Cheese Cake">Strawberry Cheese Cake — BHD 2.000</option>
+        <option value="Chocolate Cake">Chocolate Cake — BHD 2.000</option>
+        <option value="Carrot Cake">Carrot Cake — BHD 2.000</option>
+        <option value="Red Velvet Cake">Red Velvet Cake — BHD 2.000</option>
+        <option value="Lotus Cake">Lotus Cake — BHD 2.200</option>
+        <option value="San Sebastian Cake">San Sebastian Cake — BHD 2.400</option>
+        <option value="Brownies">Brownies — BHD 1.800</option>
+        <option value="Um Ali">Um Ali — BHD 1.800</option>
+        <option value="Kunafa">Kunafa — BHD 1.800</option>
+        <option value="Ice Cream">Ice Cream — BHD 1.500</option>
+        <option value="Fruit Salad">Fruit Salad — BHD 1.800</option>
+    </select>
+    <label for="">Quantiy</label>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+       
+    <br>
+
+    <label for="">Cold Beverages</label>
+    <select name="" id="">
+        <option value="">Choose</option>
+        <option value="Water">Water — BHD 0.200</option>
+        <option value="Soft Drinks">Soft Drinks — BHD 0.250</option>
+        <option value="Diet Soft Drinks">Diet Soft Drinks — BHD 0.250</option>
+        <option value="Pepsi Can">Pepsi Can — BHD 0.250</option>
+        <option value="7up Can">7up Can — BHD 0.250</option>
+        <option value="Miranda Can">Miranda Can — BHD 0.250</option>
+        <option value="Diet Pepsi Can">Diet Pepsi Can — BHD 0.250</option>
+        <option value="Diet 7up Can">Diet 7up Can — BHD 0.250</option>
+        <option value="Red Bull">Red Bull — BHD 1.000</option>
+        <option value="Vimto">Vimto — BHD 0.600</option>
+        <option value="Laban Up">Laban Up — BHD 0.400</option>
+        <option value="Ayran">Ayran — BHD 0.400</option>
+        <option value="Tea">Tea — BHD 0.250</option>
+        <option value="Karak Tea">Karak Tea — BHD 0.300</option>
+        <option value="Coffee">Coffee — BHD 0.300</option>
+        <option value="Cappuccino">Cappuccino — BHD 0.700</option>
+        <option value="Latte">Latte — BHD 0.700</option>
+        <option value="Hot Chocolate">Hot Chocolate — BHD 0.700</option>
+        <option value="Turkish Coffee">Turkish Coffee — BHD 0.500</option>
+        <option value="Espresso">Espresso — BHD 0.500</option>
+        <option value="Americano">Americano — BHD 0.700</option>
+        <option value="Mojito">Mojito — BHD 1.200</option>
+        <option value="Blue Lagoon">Blue Lagoon — BHD 1.200</option>
+        <option value="Strawberry Mojito">Strawberry Mojito — BHD 1.400</option>
+        <option value="Passion Fruit Mojito">Passion Fruit Mojito — BHD 1.400</option>
+        <option value="Mango Mojito">Mango Mojito — BHD 1.400</option>
+        <option value="Lemon Mint">Lemon Mint — BHD 1.000</option>
+    </select>
+    <label for="">Quantiy</label>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <br>
+
+    <label for="">Fresh Juices</label>
+    <select name="" id="">
+        <option value="">Choose</option>
+        <option value="Orange Juice">Orange Juice — BHD 1.000</option>
+        <option value="Pineapple Juice">Pineapple Juice — BHD 1.200</option>
+        <option value="Watermelon Juice">Watermelon Juice — BHD 1.000</option>
+        <option value="Mango Juice">Mango Juice — BHD 1.200</option>
+        <option value="Avocado Juice">Avocado Juice — BHD 1.400</option>
+        <option value="Banana Juice">Banana Juice — BHD 1.000</option>
+        <option value="Strawberry Juice">Strawberry Juice — BHD 1.200</option>
+        <option value="Apple Juice">Apple Juice — BHD 1.000</option>
+        <option value="Pomegranate Juice">Pomegranate Juice — BHD 1.400</option>
+        <option value="Kiwi Juice">Kiwi Juice — BHD 1.400</option>
+        <option value="Lemon Juice">Lemon Juice — BHD 0.900</option>
+        <option value="Lemon Mint Juice">Lemon Mint Juice — BHD 1.000</option>
+        <option value="Cocktail Juice">Cocktail Juice — BHD 1.400</option>
+        <option value="Carrot Juice">Carrot Juice — BHD 1.000</option>
+        <option value="Mix Berries Juice">Mix Berries Juice — BHD 1.600</option>
+        <option value="Mix Fruits Juice">Mix Fruits Juice — BHD 1.400</option>
+    </select>
+    <label for="">Quantiy</label>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <br>
+
+        <button type="submit">Place Order</button>
+        <button type="reset">Reset</button>
 
 
-<label for="">Pasta</label>
-<select name="" id="">
-    <option value="">Choose</option>
-    <option value="Pasta Alfredo">Pasta Alfredo — BHD 3.200</option>
-    <option value="Pasta Arrabiata">Pasta Arrabiata — BHD 3.200</option>
-    <option value="Pasta Pesto">Pasta Pesto — BHD 3.200</option>
-    <option value="Pasta Bolognese">Pasta Bolognese — BHD 3.100</option>
-    <option value="Spaghetti Bolognese">Spaghetti Bolognese — BHD 3.100</option>
-    <option value="Beef Lasagna">Beef Lasagna — BHD 3.400</option>
-</select>
-<label for="">Quantiy</label>
-<select name="" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-</select>
-
-
-<label for="">Chinese Dishes</label>
-<select name="" id="">
-    <option value="">Choose</option>
-    <option value="Sweet Corn Chicken">Sweet Corn Chicken — BHD 3.300</option>
-    <option value="Sweet Corn Prawns">Sweet Corn Prawns — BHD 3.600</option>
-    <option value="Chilli Chicken">Chilli Chicken — BHD 3.300</option>
-    <option value="Chilli Prawns">Chilli Prawns — BHD 3.600</option>
-    <option value="Chicken Manchurian">Chicken Manchurian — BHD 3.300</option>
-    <option value="Prawns Manchurian">Prawns Manchurian — BHD 3.600</option>
-    <option value="Mixed Fried Rice">Mixed Fried Rice — BHD 3.300</option>
-</select>
-<label for="">Quantiy</label>
-<select name="" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-</select>
-
-
-<label for="">Sizzling</label>
-<select name="" id="">
-    <option value="">Choose</option>
-    <option value="Beef Steak Sizzling">Beef Steak Sizzling — BHD 5.500</option>
-    <option value="Chicken Fillet Sizzling">Chicken Fillet Sizzling — BHD 5.200</option>
-    <option value="Chicken Wings Sizzling">Chicken Wings Sizzling — BHD 4.600</option>
-    <option value="Prawns Sizzling">Prawns Sizzling — BHD 5.300</option>
-    <option value="Fish Sizzling">Fish Sizzling — BHD 5.300</option>
-    <option value="Mix Sizzling">Mix Sizzling — BHD 4.300</option>
-    <option value="Vegetable Sizzling">Vegetable Sizzling — BHD 4.000</option>
-</select>
-<label for="">Quantiy</label>
-<select name="" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-</select>
-
-
-<label for="">International Dishes</label>
-<select name="" id="">
-    <option value="">Choose</option>
-    <option value="Moussaka">Moussaka — BHD 2.900</option>
-    <option value="Stuffed Zucchini">Stuffed Zucchini — BHD 2.900</option>
-    <option value="Stuffed Eggplant">Stuffed Eggplant — BHD 2.900</option>
-    <option value="Stuffed Green Pepper">Stuffed Green Pepper — BHD 2.900</option>
-    <option value="Stuffed Cabbage">Stuffed Cabbage — BHD 2.900</option>
-    <option value="Stuffed Vine Leaves">Stuffed Vine Leaves — BHD 2.900</option>
-    <option value="Mixed Stuffed">Mixed Stuffed — BHD 2.900</option>
-    <option value="Chicken Biryani">Chicken Biryani — BHD 3.200</option>
-    <option value="Lamb Biryani">Lamb Biryani — BHD 3.600</option>
-</select>
-<label for="">Quantiy</label>
-<select name="" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-</select>
-
-
-<label for="">Sandwiches</label>
-<select name="" id="">
-    <option value="">Choose</option>
-    <option value="Club Sandwich">Club Sandwich — BHD 2.600</option>
-    <option value="Burger Sandwich">Burger Sandwich — BHD 2.600</option>
-    <option value="Chicken Burger Sandwich">Chicken Burger Sandwich — BHD 2.600</option>
-    <option value="Beef Burger Sandwich">Beef Burger Sandwich — BHD 2.600</option>
-    <option value="Crispy Chicken Sandwich">Crispy Chicken Sandwich — BHD 2.600</option>
-    <option value="Steak Sandwich">Steak Sandwich — BHD 3.200</option>
-    <option value="Shish Tawook Sandwich">Shish Tawook Sandwich — BHD 1.675</option>
-</select>
-<label for="">Quantiy</label>
-<select name="" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-</select>
-
-
-<label for="">Desserts</label>
-<select name="" id="">
-    <option value="">Choose</option>
-    <option value="Strawberry Cheese Cake">Strawberry Cheese Cake — BHD 2.000</option>
-    <option value="Chocolate Cake">Chocolate Cake — BHD 2.000</option>
-    <option value="Carrot Cake">Carrot Cake — BHD 2.000</option>
-    <option value="Red Velvet Cake">Red Velvet Cake — BHD 2.000</option>
-    <option value="Lotus Cake">Lotus Cake — BHD 2.200</option>
-    <option value="San Sebastian Cake">San Sebastian Cake — BHD 2.400</option>
-    <option value="Brownies">Brownies — BHD 1.800</option>
-    <option value="Um Ali">Um Ali — BHD 1.800</option>
-    <option value="Kunafa">Kunafa — BHD 1.800</option>
-    <option value="Ice Cream">Ice Cream — BHD 1.500</option>
-    <option value="Fruit Salad">Fruit Salad — BHD 1.800</option>
-</select>
-<label for="">Quantiy</label>
-<select name="" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-</select>
-
-
-<label for="">Cold Beverages</label>
-<select name="" id="">
-    <option value="">Choose</option>
-    <option value="Water">Water — BHD 0.200</option>
-    <option value="Soft Drinks">Soft Drinks — BHD 0.250</option>
-    <option value="Diet Soft Drinks">Diet Soft Drinks — BHD 0.250</option>
-    <option value="Pepsi Can">Pepsi Can — BHD 0.250</option>
-    <option value="7up Can">7up Can — BHD 0.250</option>
-    <option value="Miranda Can">Miranda Can — BHD 0.250</option>
-    <option value="Diet Pepsi Can">Diet Pepsi Can — BHD 0.250</option>
-    <option value="Diet 7up Can">Diet 7up Can — BHD 0.250</option>
-    <option value="Red Bull">Red Bull — BHD 1.000</option>
-    <option value="Vimto">Vimto — BHD 0.600</option>
-    <option value="Laban Up">Laban Up — BHD 0.400</option>
-    <option value="Ayran">Ayran — BHD 0.400</option>
-    <option value="Tea">Tea — BHD 0.250</option>
-    <option value="Karak Tea">Karak Tea — BHD 0.300</option>
-    <option value="Coffee">Coffee — BHD 0.300</option>
-    <option value="Cappuccino">Cappuccino — BHD 0.700</option>
-    <option value="Latte">Latte — BHD 0.700</option>
-    <option value="Hot Chocolate">Hot Chocolate — BHD 0.700</option>
-    <option value="Turkish Coffee">Turkish Coffee — BHD 0.500</option>
-    <option value="Espresso">Espresso — BHD 0.500</option>
-    <option value="Americano">Americano — BHD 0.700</option>
-    <option value="Mojito">Mojito — BHD 1.200</option>
-    <option value="Blue Lagoon">Blue Lagoon — BHD 1.200</option>
-    <option value="Strawberry Mojito">Strawberry Mojito — BHD 1.400</option>
-    <option value="Passion Fruit Mojito">Passion Fruit Mojito — BHD 1.400</option>
-    <option value="Mango Mojito">Mango Mojito — BHD 1.400</option>
-    <option value="Lemon Mint">Lemon Mint — BHD 1.000</option>
-</select>
-<label for="">Quantiy</label>
-<select name="" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-</select>
-
-
-<label for="">Fresh Juices</label>
-<select name="" id="">
-    <option value="">Choose</option>
-    <option value="Orange Juice">Orange Juice — BHD 1.000</option>
-    <option value="Pineapple Juice">Pineapple Juice — BHD 1.200</option>
-    <option value="Watermelon Juice">Watermelon Juice — BHD 1.000</option>
-    <option value="Mango Juice">Mango Juice — BHD 1.200</option>
-    <option value="Avocado Juice">Avocado Juice — BHD 1.400</option>
-    <option value="Banana Juice">Banana Juice — BHD 1.000</option>
-    <option value="Strawberry Juice">Strawberry Juice — BHD 1.200</option>
-    <option value="Apple Juice">Apple Juice — BHD 1.000</option>
-    <option value="Pomegranate Juice">Pomegranate Juice — BHD 1.400</option>
-    <option value="Kiwi Juice">Kiwi Juice — BHD 1.400</option>
-    <option value="Lemon Juice">Lemon Juice — BHD 0.900</option>
-    <option value="Lemon Mint Juice">Lemon Mint Juice — BHD 1.000</option>
-    <option value="Cocktail Juice">Cocktail Juice — BHD 1.400</option>
-    <option value="Carrot Juice">Carrot Juice — BHD 1.000</option>
-    <option value="Mix Berries Juice">Mix Berries Juice — BHD 1.600</option>
-    <option value="Mix Fruits Juice">Mix Fruits Juice — BHD 1.400</option>
-</select>
-<label for="">Quantiy</label>
-<select name="" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-</select>
+        <!-- <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+        </select> -->
+    </form>
+   
 
 
 </body>
