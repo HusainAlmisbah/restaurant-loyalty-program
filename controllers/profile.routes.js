@@ -2,7 +2,8 @@ const Profile = require('../models/User')
 const router = require("express").Router()
 
 router.get('/', async (req,res)=>{
-    res.render('profile.ejs')
+    console.log(req.session)
+    res.render('profile.ejs',{cartOrder: req.session.cartOrder})
 })
 
 router.post('/', async (req,res)=>{

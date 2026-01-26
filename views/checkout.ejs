@@ -9,14 +9,91 @@
 
     <%- include('navbar') %>
     <h1>Checkout</h1>
-    <form action="/checkout" method="post">
+    <form action="/checkout/confirm" method="post">
 
         <ol>
-        <li><%= cart.soups %>: <%= cart.soupsQuantity %></li>
+            <% if (cart.soups && cart.soupsQuantity > 0) { %>
+                <li><%= cart.soups %>: <%= cart.soupsQuantity %></li>
+            <% } %>
+
+            <% if (cart.hotMeza && cart.hotMezaQuantity > 0) { %>
+                <li><%= cart.hotMeza %>: <%= cart.hotMezaQuantity %></li>
+            <% } %>
+
+            <% if (cart.coldMezaSalads && cart.coldMezaSaladsQuantity > 0) { %>
+                <li><%= cart.coldMezaSalads %>: <%= cart.coldMezaSaladsQuantity %></li>
+            <% } %>
+
+            <% if (cart.shawarma && cart.shawarmaQuantity > 0) { %>
+                <li><%= cart.shawarma %>: <%= cart.shawarmaQuantity %></li>
+            <% } %>
+
+            <% if (cart.byKG && cart.byKGQuantity > 0) { %>
+                <li><%= cart.byKG %>: <%= cart.byKGQuantity %></li>
+            <% } %>
+
+            <% if (cart.friedGrilledFish && cart.friedGrilledFishQuantity > 0) { %>
+                <li><%= cart.friedGrilledFish %>: <%= cart.friedGrilledFishQuantity %></li>
+            <% } %>
+
+            <% if (cart.stewsCurries && cart.stewsCurriesQuantity > 0) { %>
+                <li><%= cart.stewsCurries %>: <%= cart.stewsCurriesQuantity %></li>
+            <% } %>
+
+            <% if (cart.grills && cart.grillsQuantity > 0) { %>
+                <li><%= cart.grills %>: <%= cart.grillsQuantity %></li>
+            <% } %>
+
+            <% if (cart.pasta && cart.pastaQuantity > 0) { %>
+                <li><%= cart.pasta %>: <%= cart.pastaQuantity %></li>
+            <% } %>
+
+            <% if (cart.chineseDishes && cart.chineseDishesQuantity > 0) { %>
+                <li><%= cart.chineseDishes %>: <%= cart.chineseDishesQuantity %></li>
+            <% } %>
+
+            <% if (cart.sizzling && cart.sizzlingQuantity > 0) { %>
+                <li><%= cart.sizzling %>: <%= cart.sizzlingQuantity %></li>
+            <% } %>
+
+            <% if (cart.internationalDishes && cart.internationalDishesQuantity > 0) { %>
+                <li><%= cart.internationalDishes %>: <%= cart.internationalDishesQuantity %></li>
+            <% } %>
+
+            <% if (cart.sandwiches && cart.sandwichesQuantity > 0) { %>
+                <li><%= cart.sandwiches %>: <%= cart.sandwichesQuantity %></li>
+            <% } %>
+
+            <% if (cart.desserts && cart.dessertsQuantity > 0) { %>
+                <li><%= cart.desserts %>: <%= cart.dessertsQuantity %></li>
+            <% } %>
+
+            <% if (cart.coldBeverages && cart.coldBeveragesQuantity > 0) { %>
+                <li><%= cart.coldBeverages %>: <%= cart.coldBeveragesQuantity %></li>
+            <% } %>
+
+            <% if (cart.freshJuices && cart.freshJuicesQuantity > 0) { %>
+                <li><%= cart.freshJuices %>: <%= cart.freshJuicesQuantity %></li>
+            <% } %>
         </ol>
-        <label for="">Total Points to Redeem: <%= points %></label>
+
+        <% if (points > 0) { %>
+            <label>Total Points to Redeem: <%= points %></label>
+            <input value="<%= points %>" hidden name="points" type="text">
+            <br>
+        <% } %>
+
+        <% if (price > 0) { %>
+            <label>Total Price: BHD <%= price.toFixed(3) %></label>
+            <input value="<%= price %>" hidden name="total" type="text">
+
+            <br>
+        <% } %>
+
         <br>
-        <label for="">Total Price: BHD <%= price %></label>
+
+        <br>
+
         <br>
 
         <label for="">Name</label>
