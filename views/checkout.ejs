@@ -10,9 +10,14 @@
     <%- include('navbar') %>
     <h1>Checkout</h1>
     <form action="/checkout" method="post">
-        
 
-
+        <ol>
+        <li><%= cart.soups %>: <%= cart.soupsQuantity %></li>
+        </ol>
+        <label for="">Total Points to Redeem: <%= points %></label>
+        <br>
+        <label for="">Total Price: BHD <%= price %></label>
+        <br>
 
         <label for="">Name</label>
         <input name="name" type="text" placeholder="Full Name">
