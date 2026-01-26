@@ -24,6 +24,7 @@ router.get('/', async (req,res)=>{
     res.render('adminMenu.ejs', {menuItems:menuItems})
 })
 
+
 router.post('/delete/:id', async (req,res)=>{
     const id = req.params.id
     await adminMenu.findByIdAndDelete(id)

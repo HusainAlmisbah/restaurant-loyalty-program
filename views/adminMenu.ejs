@@ -17,7 +17,6 @@
                 <option value="<%= oneItem._id %>"> <%= oneItem.mealName %> </option>
             <% }) %>
         </select>
-        
 
 
         <button onclick="handleUpdate()">Update</button>
@@ -26,25 +25,68 @@
             <button>Add Item</button>
         </a>
 
-    <script>
-        const handleDelete = () => {
-            const select = document.querySelector('select[name="Soups"]')
-            const itemId = select.value
+        <script>
+            const handleDelete = () => {
+                const select = document.querySelector('select[name="Soups"]')
+                const itemId = select.value
 
-            fetch(`/adminMenu/delete/${itemId}`, {
-                method: 'POST'
-            })
-            .then(()=> {
-                window.location.reload()
-            })
-        }
+                fetch(`/adminMenu/delete/${itemId}`, {
+                    method: 'POST'
+                })
+                .then(()=> {
+                    window.location.reload()
+                })
+            }
+
+            const handleUpdate = () => {
+                const select = document.querySelector('select[name="Soups"]')
+                const itemId = select.value
+
+                window.location.href = `/adminMenu/update/${itemId}`
+            }
+        </script>
+        
+        <br><br><br>
+
+        <label for="Soups">Soups</label>
+        <select name="Soups" id="soupsSelect">
+        <option value="">Choose</option>
+
+        <% menuItems
+            .filter(oneItem => oneItem.category === "soups")
+            .forEach(oneItem => { %>
+
+            <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+
+        <% }) %>
+        </select>
+
+
+        <button onclick="handleUpdate()">Update</button>
+        <button onclick="handleDelete()">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <script>
+        const getSelectedId = () => {
+            const select = document.querySelector('select[name="Soups"]');
+            return select.value;
+        };
+
+        const handleDelete = () => {
+            const itemId = getSelectedId();
+            if (!itemId) return;
+
+            fetch(`/adminMenu/delete/${itemId}`, { method: 'POST' })
+            .then(() => window.location.reload());
+        };
 
         const handleUpdate = () => {
-            const select = document.querySelector('select[name="Soups"]')
-            const itemId = select.value
+            const itemId = getSelectedId();
+            if (!itemId) return;
 
-            window.location.href = `/adminMenu/update/${itemId}`
-        }
-    </script>
+            window.location.href = `/adminMenu/update/${itemId}`;
+        };
+        </script>
+
 </body>
 </html>

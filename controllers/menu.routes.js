@@ -215,6 +215,7 @@ router.get('/', async (req,res)=>{
 
 
     res.render('menu.ejs', {menu:menu})
+
 })
 
 module.exports = router;
