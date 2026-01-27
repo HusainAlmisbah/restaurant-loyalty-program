@@ -12,6 +12,7 @@
     <form action="/checkout/confirm" method="post">
 
         <ol>
+            <% if (cart){ %>
             <% if (cart.soups && cart.soupsQuantity > 0) { %>
                 <li><%= cart.soups %>: <%= cart.soupsQuantity %></li>
             <% } %>
@@ -89,6 +90,10 @@
 
             <br>
         <% } %>
+
+        <% } else{%>
+            <p>Cart is empty</p>
+        <%} %>
 
         <br>
 

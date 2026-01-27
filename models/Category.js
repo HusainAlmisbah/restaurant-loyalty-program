@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
+const { category } = require("../category");
 
 const categorySchema = new mongoose.Schema({
   Points: {
     type: Number,
     // required: true,
   },
-  Category: {
+  category: {
     type: String
   }  
 });

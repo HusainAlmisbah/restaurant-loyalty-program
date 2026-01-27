@@ -17,10 +17,14 @@
         <!-- <button>Update Profile</button> -->
         <h2>Orders</h2>
 
+        <% if(cartOrder){ %>
+
         <p>Order Number: <%= cartOrder.orderNumber %></p>
         <p>Date: <%= cartOrder.date %></p>
         <p>Total: <%=  cartOrder.total %></p>
         <p>Points: <%= cartOrder.points %></p>
+
+        <%} %>
         
         
 

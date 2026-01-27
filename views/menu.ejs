@@ -18,8 +18,8 @@
     <select name="soups" id="soups">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "soups").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -44,8 +44,8 @@
     <select name="hotMeza" id="hotMeza">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "hotMeza").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -70,8 +70,8 @@
     <select name="coldMezaSalads" id="coldMezaSalads">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "coldMezaSalads").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -96,8 +96,8 @@
     <select name="shawarma" id="shawarma">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "shawarma").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -122,8 +122,8 @@
     <select name="byKG" id="byKG">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "byKG").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -148,8 +148,8 @@
     <select name="friedGrilledFish" id="friedGrilledFish">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "friedGrilledFish").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -174,8 +174,8 @@
     <select name="stewsCurries" id="stewsCurries">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "stewsCurries").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -200,8 +200,8 @@
     <select name="grills" id="grills">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "grills").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -226,8 +226,8 @@
     <select name="pasta" id="pasta">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "pasta").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -252,8 +252,8 @@
     <select name="chineseDishes" id="chineseDishes">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "chineseDishes").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -278,8 +278,8 @@
     <select name="sizzling" id="sizzling">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "sizzling").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -304,8 +304,8 @@
     <select name="internationalDishes" id="internationalDishes">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "internationalDishes").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -330,8 +330,8 @@
     <select name="sandwiches" id="sandwiches">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "sandwiches").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -356,8 +356,8 @@
     <select name="desserts" id="desserts">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "desserts").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -382,8 +382,8 @@
     <select name="coldBeverages" id="coldBeverages">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "coldBeverages").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -408,8 +408,8 @@
     <select name="freshJuices" id="freshJuices">
         <option value="">Choose</option>
         <% menu.filter(i => i.category === "freshJuices").forEach(i => { %>
-            <option value="<%= i.name %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
-                <%= i.name %> — BHD <%= i.price.toFixed(3) %>
+            <option value="<%= i.mealName %>" data-price="<%= i.price %>" data-points="<%= i.points %>">
+                <%= i.mealName %> — BHD <%= i.price.toFixed(3) %>
             </option>
         <% }) %>
     </select>
@@ -435,11 +435,6 @@
         <button type="reset">Reset</button>
 
 
-        <!-- <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
-        <option selected>Choose...</option>
-        <option>...</option>
-        </select> -->
     </form>
    
 

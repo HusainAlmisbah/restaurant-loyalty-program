@@ -1,26 +1,11 @@
 const adminMenu = require('../models/Menu-Items')
 const router = require("express").Router()
-const points=[
-    'soups',
-    'hotMeza',
-    'coldMezaSalads',
-    'shawarma',
-    'byKG',
-    'friedGrilledFish',
-    'stewsCurries',
-    'grills',
-    'pasta',
-    'chineseDishes',
-    'sizzling',
-    'internationalDishes',
-    'sandwiches',
-    'desserts',
-    'coldBeverages',
-    'freshJuices',
-]
+const {category: points} = require('../category')
+
 
 router.get('/', async (req,res)=>{
     const menuItems = await adminMenu.find({})
+    console.log(menuItems)
     res.render('adminMenu.ejs', {menuItems:menuItems})
 })
 

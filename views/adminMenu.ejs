@@ -14,79 +14,275 @@
         <label for="Soups">Soups</label>
         <select name="Soups" id="">
             <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'soups'){ %>
                 <option value="<%= oneItem._id %>"> <%= oneItem.mealName %> </option>
+                <% } %>
             <% }) %>
         </select>
 
 
-        <button onclick="handleUpdate()">Update</button>
-        <button onclick="handleDelete()">Delete</button>
+        <button onclick="handleUpdate('Soups')">Update</button>
+        <button onclick="handleDelete('Soups')">Delete</button>
         <a href="/item">
             <button>Add Item</button>
         </a>
 
-        <script>
-            const handleDelete = () => {
-                const select = document.querySelector('select[name="Soups"]')
-                const itemId = select.value
-
-                fetch(`/adminMenu/delete/${itemId}`, {
-                    method: 'POST'
-                })
-                .then(()=> {
-                    window.location.reload()
-                })
-            }
-
-            const handleUpdate = () => {
-                const select = document.querySelector('select[name="Soups"]')
-                const itemId = select.value
-
-                window.location.href = `/adminMenu/update/${itemId}`
-            }
-        </script>
-        
         <br><br><br>
 
-        <label for="Soups">Soups</label>
-        <select name="Soups" id="soupsSelect">
-        <option value="">Choose</option>
-
-        <% menuItems
-            .filter(oneItem => oneItem.category === "soups")
-            .forEach(oneItem => { %>
-
-            <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
-
-        <% }) %>
+        <label for="hotMeza">Hot Meza</label>
+        <select name="hotMeza" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'hotMeza'){ %>
+                <option value="<%= oneItem._id %>"> <%= oneItem.mealName %> </option>
+                <% } %>
+            <% }) %>
         </select>
 
-
-        <button onclick="handleUpdate()">Update</button>
-        <button onclick="handleDelete()">Delete</button>
+        <button onclick="handleUpdate('hotMeza')">Update</button>
+        <button onclick="handleDelete('hotMeza')">Delete</button>
         <a href="/item"><button>Add Item</button></a>
 
+        <br><br><br>
+
+         <label for="coldMezaSalads">Cold Meza & Salads</label>
+        <select name="coldMezaSalads" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'coldMezaSalads'){ %>
+                <option value="<%= oneItem._id %>"> <%= oneItem.mealName %> </option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('coldMezaSalads')">Update</button>
+        <button onclick="handleDelete('coldMezaSalads')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="shawarma">Shawarma</label>
+        <select name="shawarma" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'shawarma'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('shawarma')">Update</button>
+        <button onclick="handleDelete('shawarma')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="byKG">By KG</label>
+        <select name="byKG" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'byKG'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('byKG')">Update</button>
+        <button onclick="handleDelete('byKG')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="friedGrilledFish">Fried & Grilled Fish</label>
+        <select name="friedGrilledFish" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'friedGrilledFish'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('friedGrilledFish')">Update</button>
+        <button onclick="handleDelete('friedGrilledFish')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="stewsCurries">Stews & Curries</label>
+        <select name="stewsCurries" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'stewsCurries'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('stewsCurries')">Update</button>
+        <button onclick="handleDelete('stewsCurries')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="grills">Grills</label>
+        <select name="grills" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'grills'){ %>
+                <option value="<%= oneItem._id %>"> <%= oneItem.mealName %> </option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('grills')">Update</button>
+        <button onclick="handleDelete('grills')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="pasta">Pasta</label>
+        <select name="pasta" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'pasta'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('pasta')">Update</button>
+        <button onclick="handleDelete('pasta')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="chineseDishes">Chinese Dishes</label>
+        <select name="chineseDishes" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'chineseDishes'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('chineseDishes')">Update</button>
+        <button onclick="handleDelete('chineseDishes')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="sizzling">Sizzling</label>
+        <select name="sizzling" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'sizzling'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('sizzling')">Update</button>
+        <button onclick="handleDelete('sizzling')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="internationalDishes">International Dishes</label>
+        <select name="internationalDishes" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'internationalDishes'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('internationalDishes')">Update</button>
+        <button onclick="handleDelete('internationalDishes')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="sandwiches">Sandwiches</label>
+        <select name="sandwiches" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'sandwiches'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('sandwiches')">Update</button>
+        <button onclick="handleDelete('sandwiches')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="desserts">Desserts</label>
+        <select name="desserts" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'desserts'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('desserts')">Update</button>
+        <button onclick="handleDelete('desserts')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="coldBeverages">Cold Beverages</label>
+        <select name="coldBeverages" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'coldBeverages'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('coldBeverages')">Update</button>
+        <button onclick="handleDelete('coldBeverages')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+        <br><br><br>
+
+        <label for="freshJuices">Fresh Juices</label>
+        <select name="freshJuices" id="">
+            <% menuItems.forEach((oneItem)=>{ %>
+                <% if (oneItem.category === 'freshJuices'){ %>
+                <option value="<%= oneItem._id %>"><%= oneItem.mealName %></option>
+                <% } %>
+            <% }) %>
+        </select>
+
+        <button onclick="handleUpdate('freshJuices')">Update</button>
+        <button onclick="handleDelete('freshJuices')">Delete</button>
+        <a href="/item"><button>Add Item</button></a>
+
+
+
+
+
+
+
+
         <script>
-        const getSelectedId = () => {
-            const select = document.querySelector('select[name="Soups"]');
+        const getSelectedId = (selected) => {
+            const select = document.querySelector(`select[name="${selected}"]`);
             return select.value;
         };
 
-        const handleDelete = () => {
-            const itemId = getSelectedId();
+        const handleDelete = (selected) => {
+            const itemId = getSelectedId(selected);
             if (!itemId) return;
 
             fetch(`/adminMenu/delete/${itemId}`, { method: 'POST' })
             .then(() => window.location.reload());
         };
 
-        const handleUpdate = () => {
-            const itemId = getSelectedId();
+        const handleUpdate = (selected) => {
+            const itemId = getSelectedId(selected);
             if (!itemId) return;
 
             window.location.href = `/adminMenu/update/${itemId}`;
         };
         </script>
+
+        
+
 
 </body>
 </html>
